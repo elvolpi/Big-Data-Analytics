@@ -50,7 +50,7 @@ if __name__ == "__main__":
 		meanList.append((avX,avY))
   
   	tempDist = getConv(centers, meanList)
-  	if tempDist > convergeDistance: 
+  	if tempDist > convergeDistance:  #Need to remove "if tempDist > convergeDistance:". Otherwise, the centers are not updated in the last iteration.
   		centers = meanList
  	
   rd2 = sc.parallelize(centers)	
